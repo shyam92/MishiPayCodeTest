@@ -12,4 +12,4 @@
 - Fetch products from an API which allows more data to be available
 
 
-[Video of the app](https://github.com/shyam92/MishiPayCodeTest/blob/master/Video%20of%20app.mp4)
+[Video of the app](https://github.com/shyam92/MishiPayCodeTest/blob/master/Video%20of%20app.mp4?raw=true)
