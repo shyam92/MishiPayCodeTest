@@ -1,0 +1,6 @@
+framework module Pods_MishiPayCodeTest {
+  umbrella header "Pods-MishiPayCodeTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
