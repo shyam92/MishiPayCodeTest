@@ -15,6 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let databaseInitialInsert = DatabaseManager()
+        
+        /// Check if anything is already in the realm instant
+        if (databaseInitialInsert.fetchObjects(for: Product.self)?.count ?? 0) != 0 {
+            /// Delete last basket session
+            databaseInitialInsert.deleteObjects(for: Basket.self)
+            return true
+        }
+        
+        let first = Product(name: "Febreze Air Cotton Fresh", price: 2.99, barcode: "5413149462656")
+        let second = Product(name: "Air Wick Lavender & Camomile", price: 1.99, barcode: "3059943016507")
+        let third = Product(name: "Glade Citrus", price: 2.39, barcode: "5000204144703")
+        let fourth = Product(name: "Oust Garden Fresh", price: 1.23, barcode: "5000204883381")
+        databaseInitialInsert.addObjects(with: [first, second, third, fourth])
+        
         return true
     }
 
